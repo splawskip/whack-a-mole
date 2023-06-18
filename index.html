@@ -42,10 +42,12 @@
   </head>
   <body>
     <div id="app" class="app">
-      <h1 class="title">Whack-a-Mole</h1>
-      <p class="score">
-        Your score: <span class="score__value" data-game="score">0</span>
-      </p>
+      <header class="header">
+        <h1 class="title">Whack-a-Mole</h1>
+        <p class="score">
+          Your score: <span class="score__value" data-game="score">0</span>
+        </p>
+      </header>
       <main class="backyard" data-game="board">
         <div class="backyard__hole" data-game="hole">
           <div class="mole"></div>
@@ -76,6 +78,9 @@
         </div>
       </main>
       <button class="button" data-game="start-button">Start game</button>
+      <footer class="footer">
+        Made with <span class="heart" title="Love"></span> by psplawski.dev.
+      </footer>
     </div>
     <script type="module" src="./src/js/main.js"></script>
   </body>
