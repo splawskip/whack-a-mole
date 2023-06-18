@@ -13,6 +13,7 @@ You can access the live version of Whack-A-Mole by visiting: [Whack-A-Mole Live]
 - Simple and intuitive gameplay: Use your mouse or tap the screen to whack the moles as they appear.
 - Score tracking: Keep track of your score as you play and aim for the highest score possible.
 - Time limit: Race against the clock to hit as many moles as you can before time runs out.
+- Highest score memory using localStorage
 
 ## Tech Stack:
 
