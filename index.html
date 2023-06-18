@@ -44,9 +44,16 @@
     <div id="app" class="app">
       <header class="header">
         <h1 class="title">Whack-a-Mole</h1>
-        <p class="score">
-          Your score: <span class="score__value" data-game="score">0</span>
-        </p>
+        <div class="score-board">
+          <p class="score">
+            Your score:
+            <span class="score__value" data-game="current-score">0</span>
+          </p>
+          <p class="score">
+            Your highest score:
+            <span class="score__value" data-game="highest-score">0</span>
+          </p>
+        </div>
       </header>
       <main class="backyard" data-game="board">
         <div class="backyard__hole" data-game="hole">
