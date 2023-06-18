@@ -3,42 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Whack-a-Mole</title>
   </head>
   <body>
-    <div id="app">
-      <main class="backyard">
-        <div class="backyard__hole">
+    <div id="app" class="app">
+      <h1 class="title">Whack-a-Mole</h1>
+      <p class="score">
+        Your score: <span class="score__value" data-game="score">0</span>
+      </p>
+      <main class="backyard" data-game="board">
+        <div class="backyard__hole" data-game="hole">
           <div class="mole"></div>
         </div>
-        <div class="backyard__hole">
-          <div class="mole"></div>
+        <div class="backyard__hole" data-game="hole">
+          <div class="mole" data-game="mole"></div>
         </div>
-        <div class="backyard__hole">
-          <div class="mole"></div>
+        <div class="backyard__hole" data-game="hole">
+          <div class="mole" data-game="mole"></div>
         </div>
-        <div class="backyard__hole">
-          <div class="mole"></div>
+        <div class="backyard__hole" data-game="hole">
+          <div class="mole" data-game="mole"></div>
         </div>
-        <div class="backyard__hole">
-          <div class="mole"></div>
+        <div class="backyard__hole" data-game="hole">
+          <div class="mole" data-game="mole"></div>
         </div>
-        <div class="backyard__hole">
-          <div class="mole"></div>
+        <div class="backyard__hole" data-game="hole">
+          <div class="mole" data-game="mole"></div>
         </div>
-        <div class="backyard__hole">
-          <div class="mole"></div>
+        <div class="backyard__hole" data-game="hole">
+          <div class="mole" data-game="mole"></div>
         </div>
-        <div class="backyard__hole">
-          <div class="mole"></div>
+        <div class="backyard__hole" data-game="hole">
+          <div class="mole" data-game="mole"></div>
         </div>
-        <div class="backyard__hole">
-          <div class="mole"></div>
+        <div class="backyard__hole" data-game="hole">
+          <div class="mole" data-game="mole"></div>
         </div>
       </main>
+      <button class="button" data-game="start-button">Start game</button>
     </div>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
