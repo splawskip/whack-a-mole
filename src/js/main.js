@@ -65,7 +65,7 @@ const App = {
    *
    * @returns {void}
    */
-  peep() {
+  peepMole() {
     // Get mole peep duration.
     const peepDuration = App.getRandomTime(200, 1000);
     // Get hole from which mole will peep.
@@ -77,7 +77,7 @@ const App = {
       hole.classList.remove('peep');
       // If game should last, show another mole.
       if (!App.timeUp) {
-        App.peep();
+        App.peepMole();
       }
     }, peepDuration);
   },
@@ -87,7 +87,7 @@ const App = {
    * @param {Event} event - The click event object.
    * @returns {void}
    */
-  bonk(event) {
+  bonkMole(event) {
     // Bail if no real click.
     if (!event.isTrusted) {
       return;
@@ -110,7 +110,7 @@ const App = {
     App.timeUp = false;
     App.score = 0;
     // Force moles to peep.
-    App.peep();
+    App.peepMole();
     // End game after 10 seconds.
     setTimeout(() => {
       App.timeUp = true;
@@ -125,7 +125,7 @@ const App = {
     // Delegate click events from gameboard to moles.
     App.$.backyard.addEventListener('click', (event) => {
       if (event.target.matches('[data-game="mole"]')) {
-        App.bonk(event);
+        App.bonkMole(event);
       }
     });
     // Attach start game event to start button.
