@@ -2,12 +2,14 @@ const App = {
   /**
    * DOM elements used by the application.
    *
-   * @property {Element} scoreBoard - The score board element.
+   * @property {Element} currentScore - The score board element.
+   * @property {Element} highrstScore - The score board element.
    * @property {Element} backyard - The backyard element.
    * @property {NodeList} holes - The list of hole elements.
    */
   $: {
-    scoreBoard: document.querySelector('[data-game="score"]'),
+    currentScore: document.querySelector('[data-game="current-score"]'),
+    highestScore: document.querySelector('[data-game="highest-score"]'),
     backyard: document.querySelector('[data-game="board"]'),
     holes: document.querySelectorAll('[data-game="hole"]'),
     startButton: document.querySelector('[data-game="start-button"]'),
@@ -30,6 +32,12 @@ const App = {
    * @type {number}
    */
   score: 0,
+  /**
+   * The highest score.
+   *
+   * @type {number}
+   */
+  highestScore: localStorage.getItem('highestScore') ?? 0,
   /**
    * Generates a random time between min and max.
    *
@@ -97,7 +105,7 @@ const App = {
     // Hide clicked mole.
     event.target.classList.remove('peep');
     // Update score board UI.
-    App.$.scoreBoard.textContent = App.score;
+    App.$.currentScore.textContent = App.score;
   },
   /**
    * Starts the game by initializing the score, setting the game time, and starting the mole appearances.
@@ -106,7 +114,7 @@ const App = {
    */
   startGame() {
     // Reset game variables.
-    App.$.scoreBoard.textContent = 0;
+    App.$.currentScore.textContent = 0;
     App.timeUp = false;
     App.score = 0;
     // Force moles to peep.
@@ -114,6 +122,12 @@ const App = {
     // End game after 10 seconds.
     setTimeout(() => {
       App.timeUp = true;
+      // If current score is higher than highest score, update highest score.
+      if (App.score > App.highestScore) {
+        App.highestScore = App.score;
+        App.$.highestScore.textContent = App.score;
+        localStorage.setItem('highestScore', App.score);
+      }
     }, 10000);
   },
   /**
@@ -138,6 +152,7 @@ const App = {
    */
   boot() {
     App.bindEvents();
+    App.$.highestScore.textContent = App.highestScore;
   },
 };
 // Boot the app.

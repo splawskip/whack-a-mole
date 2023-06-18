@@ -53,6 +53,14 @@
   text-align: center;
 }
 
+.score-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
 .score {
   font-size: 1.5rem;
   margin-bottom: 1rem;
